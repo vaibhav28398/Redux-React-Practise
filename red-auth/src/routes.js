@@ -3,6 +3,7 @@ import React,{Component} from 'react';
 import Component1 from './functional/component1';
 import Component2 from './functional/component2';
 import Component3 from './functional/component3';
+import DynamicComponent from './functional/dynamicComponent';
 
 import {Router,Route, Switch} from 'react-router';
 
@@ -22,6 +23,7 @@ class Routes extends Component{
                     <Route path="/component1" component={Component1} />
                     <Route path="/component2" render={(props)=><Component2 {...props}/>} />
                     <Route path="/component3" component={Component3} />
+                    <Route path="/component/:id" render={(props)=><DynamicComponent {...props}/>} />
                     </Switch>
                     </div>
                 </Router>
